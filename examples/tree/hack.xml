@@ -1,0 +1,15 @@
+<root>
+    <items>
+        <item id="1">
+            <label>first item</label>
+            <items>
+                <item id="2">
+                    <label>second Item (nested)</label>
+                </item>
+                <item id="3">
+                    <label>third Item (nested)</label>
+                </item>
+            </items>
+        </item>
+    </items>
+</root>

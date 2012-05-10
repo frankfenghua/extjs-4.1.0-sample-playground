@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <roots>
+<!--<text>.</text>-->
+<children>
+<task>Project: Shopping</task>
+<duration>13.25</duration>
+<user>Tommy Maintz</user>
+<iconCls>task-folder</iconCls>
+<expanded>true</expanded>
+<children>
+    <task>Housewares</task>
+    <duration>1.25</duration>
+    <user>Tommy Maintz</user>
+    <iconCls>task-folder</iconCls>
+    <children>
+        <task>Kitchen supplies</task>
+        <duration>0.25</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+    <children>
+        <task>Groceries</task>
+        <duration>0.4</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+    <children>
+        <task>Cleaning supplies</task>
+        <duration>0.4</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+    <children>
+        <task>Office supplies</task>
+        <duration>0.2</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+</children>
+<children>
+    <task>Remodeling</task>
+    <duration>12</duration>
+    <user>Tommy Maintz</user>
+    <iconCls>task-folder</iconCls>
+    <expanded>true</expanded>
+    <children>
+        <task>Retile kitchen</task>
+        <duration>6.5</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+    <children>
+        <task>Paint bedroom</task>
+        <duration>2.75</duration>
+        <user>Tommy Maintz</user>
+        <iconCls>task-folder</iconCls>
+        <children>
+            <task>Ceiling</task>
+            <duration>1.25</duration>
+            <user>Tommy Maintz</user>
+            <iconCls>task</iconCls>
+            <leaf>true</leaf>
+        </children>
+        <children>
+            <task>Walls</task>
+            <duration>1.5</duration>
+            <user>Tommy Maintz</user>
+            <iconCls>task</iconCls>
+            <leaf>true</leaf>
+        </children>
+    </children>
+    <children>
+        <task>Decorate living room</task>
+        <duration>2.75</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+    <children>
+        <task>Fix lights</task>
+        <duration>0.75</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+    <children>
+        <task>Reattach screen door</task>
+        <duration>2</duration>
+        <user>Tommy Maintz</user>
+        <leaf>true</leaf>
+        <iconCls>task</iconCls>
+    </children>
+</children>
+</children>
+<children>
+<task>Project: Testing</task>
+<duration>2</duration>
+<user>Core Team</user>
+<iconCls>task-folder</iconCls>
+<children>
+    <task>Mac OSX</task>
+    <duration>0.75</duration>
+    <user>Tommy Maintz</user>
+    <iconCls>task-folder</iconCls>
+    <children>
+        <task>FireFox</task>
+        <duration>0.25</duration>
+        <user>Tommy Maintz</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+    <children>
+        <task>Safari</task>
+        <duration>0.25</duration>
+        <user>Tommy Maintz</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+    <children>
+        <task>Chrome</task>
+        <duration>0.25</duration>
+        <user>Tommy Maintz</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+</children>
+<children>
+    <task>Windows</task>
+    <duration>3.75</duration>
+    <user>Darrell Meyer</user>
+    <iconCls>task-folder</iconCls>
+    <children>
+        <task>FireFox</task>
+        <duration>0.25</duration>
+        <user>Darrell Meyer</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+    <children>
+        <task>Safari</task>
+        <duration>0.25</duration>
+        <user>Darrell Meyer</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+    <children>
+        <task>Chrome</task>
+        <duration>0.25</duration>
+        <user>Darrell Meyer</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+    <children>
+        <task>Internet Exploder</task>
+        <duration>3</duration>
+        <user>Darrell Meyer</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+</children>
+<children>
+    <task>Linux</task>
+    <duration>0.5</duration>
+    <user>Aaron Conran</user>
+    <iconCls>task-folder</iconCls>
+    <children>
+        <task>FireFox</task>
+        <duration>0.25</duration>
+        <user>Aaron Conran</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+    <children>
+        <task>Chrome</task>
+        <duration>0.25</duration>
+        <user>Aaron Conran</user>
+        <iconCls>task</iconCls>
+        <leaf>true</leaf>
+    </children>
+</children>
+</children>
+</roots>
