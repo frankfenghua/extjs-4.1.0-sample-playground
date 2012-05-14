@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Phil",
+            "leaf": true
+        },
+        {
+            "id": 2,
+            "name": "Nico",
+            "expanded": true,
+            "data": [
+                {
+                    "id": 3,
+                    "name": "Mitchell",
+                    "leaf": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Sue",
+            "loaded": true
+        }
+    ]
+}
