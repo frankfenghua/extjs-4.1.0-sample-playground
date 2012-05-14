@@ -195,7 +195,9 @@ Ext.onReady(function() {
 //            url: 'treegrid_nested_json2.json',
 //            url: 'treegrid_nested_json3.json',
             reader: {
-                type:'myreader'
+                type:'myreader'        ,
+                root:'explorer' ,
+                record:'node'
 //                ,
 //                root: function(o) {
 //                    return o;
