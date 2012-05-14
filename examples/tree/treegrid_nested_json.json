@@ -7,7 +7,6 @@
         "version": "0.2",
         "year": "2011",
         "versionid": "143DE533-2D2D-872D-F796-6780F643992E",
-        "expanded":true,
         "node": {
             "label": "New%20Algorithm",
             "srcnodeid": "4840DA13-81EE-A536-21F8-9437DA6D4535",
@@ -18,14 +17,12 @@
             "versionid": "gls@2E27AB63-5E21-7BED-FFBF-2A040DDF2F2B",
             "selected": "false",
             "version": "2011.0.02",
-            "expanded":true,
             "node": {
                 "label": "001%20link",
                 "type": "PHASE",
                 "nodeid": "FDD55E9E-6FB7-B62A-AF2D-2A416881BF46",
                 "versionid": "EF7438CB-7FB3-B6D3-8BF2-07711C4FDBFC",
-                "selected": "false",
-                "leaf":true
+                "selected": "false"
             }
         }
     }

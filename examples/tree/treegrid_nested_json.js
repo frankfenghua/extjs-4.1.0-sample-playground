@@ -87,6 +87,68 @@ Ext.onReady(function() {
         }
     });
 
+
+    Ext.define('MyTreeStore',{
+        extend: 'Ext.data.TreeStore'
+        ,
+        alias : 'store.myTreeStore'
+
+    });
+
+    MyTreeStore.override({
+        fillNode: function(node, newNodes) {
+            var me = this,
+                ln = newNodes ? newNodes.length : 0,
+                sorters = me.sorters,
+                i, sortCollection,
+                needsIndexSort = false,
+                performLocalSort = ln && me.sortOnLoad && !me.remoteSort && sorters && sorters.items && sorters.items.length,
+                node1, node2;
+
+            // See if there are any differing index values in the new nodes. If not, then we do not have to sortByIndex
+            for (i = 1; i < ln; i++) {
+                node1 = newNodes[i];
+                node2 = newNodes[i - 1];
+                needsIndexSort = node1[node1.persistenceProperty].index != node2[node2.persistenceProperty].index;
+                if (needsIndexSort) {
+                    break;
+                }
+            }
+
+            // If there is a set of local sorters defined.
+            if (performLocalSort) {
+                // If sorting by index is needed, sort by index first
+                if (needsIndexSort) {
+                    me.sorters.insert(0, me.indexSorter);
+                }
+                sortCollection = new Ext.util.MixedCollection();
+                sortCollection.addAll(newNodes);
+                sortCollection.sort(me.sorters.items);
+                newNodes = sortCollection.items;
+
+                // Remove the index sorter
+                me.sorters.remove(me.indexSorter);
+            } else if (needsIndexSort) {
+                Ext.Array.sort(newNodes, me.sortByIndex);
+            }
+
+            node.set('loaded', true);
+            for (i = 0; i < ln; i++) {
+                if(!node.isRoot()){
+                    if(node.raw.node){
+                        node.appendChild(newNodes[i], undefined, true);
+                    }else{
+                        node.set('leaf',true);
+                    }
+                }else{
+                    node.appendChild(newNodes[i], undefined, true);
+                }
+            }
+
+            return newNodes;
+        }
+
+    });
     //http://stackoverflow.com/questions/6263380/extjs4-json-treestore
 
     /**
@@ -115,13 +177,14 @@ Ext.onReady(function() {
          }
      }
      */
-    var store = Ext.create('Ext.data.TreeStore', {
+//    var store = Ext.create('Ext.data.TreeStore', {
+    var store = Ext.create('MyTreeStore', {
         id: 'store',
         model: 'GusModel',
         proxy: {
             type: 'ajax',
-            url: 'treegrid_nested_json2.json',
-//            url: 'treegrid_nested_json.json',
+//            url: 'treegrid_nested_json2.json',
+            url: 'treegrid_nested_json.json',
             reader: {
                 type:'myreader',
                 root: function(o) {
