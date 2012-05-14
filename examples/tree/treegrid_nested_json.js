@@ -183,8 +183,9 @@ Ext.onReady(function() {
         model: 'GusModel',
         proxy: {
             type: 'ajax',
+//            url: 'treegrid_nested_json.json',
 //            url: 'treegrid_nested_json2.json',
-            url: 'treegrid_nested_json.json',
+            url: 'treegrid_nested_json3.json',
             reader: {
                 type:'myreader',
                 root: function(o) {
