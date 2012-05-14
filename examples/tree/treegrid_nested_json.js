@@ -177,7 +177,11 @@ Ext.onReady(function() {
          }
      }
      */
-//    var store = Ext.create('Ext.data.TreeStore', {
+
+    /**
+     * convert xml to json
+     * http://localhost/extgit/test/xmltojson.html
+     */
     var store = Ext.create('MyTreeStore', {
         id: 'store',
         model: 'GusModel',
