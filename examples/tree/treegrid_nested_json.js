@@ -69,27 +69,62 @@ Ext.onReady(function() {
         ]
     });
 
+    Ext.define('MyReader',{
+        extend: 'Ext.data.reader.Json',
+        alias : 'reader.myreader'
+
+    });
+
+    MyReader.override({
+        getResponseData : function(response) {
+            console.log("in overridden getResponseData");
+            var jsonData = this.callOverridden(arguments);
+//            jsonData = Ext.JSON.decode(response.responseText);
+
+//            return jsonData.node;
+            return jsonData;
+
+        }
+// ,
+//                read: function(response) {
+////                    var data = Util.stringToXML(response.data);
+////                    var data = Util.stringToXML(response.responseText);
+//                    var data;
+//                    if (response && response.responseText) {
+//                        data = this.getResponseData(response);
+//                    }
+//                    if (data) {
+//                        return this.readRecords(data);
+//                    } else {
+//                        return this.nullResultSet;
+//                    }
+//                }
+
+    });
+
     var store = Ext.create('Ext.data.TreeStore', {
         id: 'store',
-//        model: 'UsgsList',
         model: 'GusModel',
         proxy: {
             type: 'ajax',
             url: 'treegrid_nested_json.json',
             reader: {
-                type:'json',
+//                type:'json'
+                type:'myreader'
+                ,
                 root:'node'
             }
         }
-        ,
-        root: {
-            name: 'People',
-            label: 'People',
-            nodeid: 'root_nodeid',
-            expanded: true
-        }
+//        ,
+//        root: {
+//            name: 'People',
+//            label: 'People',
+//            nodeid: 'root_nodeid',
+//            expanded: true
+//        }
 
     });
+
 
     function renderTitle(value, p, record) {
         return Ext.String.format('<a href="{1}" target="_blank">{0}</a>',
@@ -103,7 +138,8 @@ Ext.onReady(function() {
         height: 500,
         title: 'nested_json_tree',
         store: store,
-//        rootVisible	: false,
+//        rootVisible	: true,
+        rootVisible	: false,
         // grid columns
         columns: [
             {   xtype: 'treecolumn',
