@@ -81,47 +81,66 @@ Ext.onReady(function() {
             var jsonData = this.callOverridden(arguments);
 //            jsonData = Ext.JSON.decode(response.responseText);
 
-//            return jsonData.node;
+//            return jsonData.explorer;
             return jsonData;
 
         }
-// ,
-//                read: function(response) {
-////                    var data = Util.stringToXML(response.data);
-////                    var data = Util.stringToXML(response.responseText);
-//                    var data;
-//                    if (response && response.responseText) {
-//                        data = this.getResponseData(response);
-//                    }
-//                    if (data) {
-//                        return this.readRecords(data);
-//                    } else {
-//                        return this.nullResultSet;
-//                    }
-//                }
-
     });
 
+    //http://stackoverflow.com/questions/6263380/extjs4-json-treestore
+
+    /**
+     *
+     *
+     *    {
+     "Data":{
+     "__type":"ListWrapperOfDepartmentTreeNodewnEzJCii:#PortalMvc.Global.Classlibrary.Model.Ui.JSONWrappers",
+     "items":[{
+     "ActualHeadcount":0,
+     "Headcount":0,
+     "Leavers":0,
+     "ParentId":"~~",
+     "Starters":0,
+     "children":[{
+     "ActualHeadcount":0,
+      ....
+
+     It expects the root to be repeated for each set of child nodes. So for "children" it's also trying to read "Data.items".
+     If you can't alter the data structure, the root can also be a function, something like:
+         root: function(o) {
+         if (o.Data) {
+             return o.Data.items;
+         } else {
+             return o.children;
+         }
+     }
+     */
     var store = Ext.create('Ext.data.TreeStore', {
         id: 'store',
         model: 'GusModel',
         proxy: {
             type: 'ajax',
-            url: 'treegrid_nested_json.json',
+            url: 'treegrid_nested_json2.json',
+//            url: 'treegrid_nested_json.json',
             reader: {
-//                type:'json'
-                type:'myreader'
-                ,
-                root:'node'
+                type:'myreader',
+                root: function(o) {
+                    if (o.explorer) { //root
+
+                        return o.explorer.node;     // for treegrid_nested_json2.json
+                    } else {
+                        return o.node; // for    treegrid_nested_json.json
+                    }
+                }
             }
         }
-//        ,
-//        root: {
-//            name: 'People',
-//            label: 'People',
-//            nodeid: 'root_nodeid',
-//            expanded: true
-//        }
+        ,
+        root: {
+            name: 'People',
+            label: 'People',
+            nodeid: 'root_nodeid',
+            expanded: true
+        }
 
     });
 
@@ -138,8 +157,8 @@ Ext.onReady(function() {
         height: 500,
         title: 'nested_json_tree',
         store: store,
-//        rootVisible	: true,
-        rootVisible	: false,
+        rootVisible	: true,
+//        rootVisible	: false,
         // grid columns
         columns: [
             {   xtype: 'treecolumn',
