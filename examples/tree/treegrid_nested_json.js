@@ -19,13 +19,6 @@ Ext.require([
 ]);
 
 Ext.onReady(function() {
-    Ext.define('UsgsList', {
-        extend: 'Ext.data.Model',
-        fields: [
-            {name: 'name',       type: 'string'},
-            {name: 'id',     type: 'string'}
-        ]
-    });
 
     Ext.define('GusModel', {
         extend: 'Ext.data.Model',
@@ -39,14 +32,39 @@ Ext.onReady(function() {
                 type: 'string'
             },
             {
+                mapping: 'versionid',
+                name: 'versionid',
+                type: 'string'
+            },
+            {
                 mapping: 'type',
                 name: 'type',
                 type: 'string'
             },
             {
-                name:"nodeid",
-                mapping:'nodeid',
-                type:'string'
+                mapping: 'nodeid',
+                name: 'nodeid',
+                type: 'string'
+            },
+            {
+                mapping: 'selected',
+                name: 'selected',
+                type: 'string'
+            },
+            {
+                mapping: 'version',
+                name: 'version',
+                type: 'string'
+            },
+            {
+                mapping: 'seqnum',
+                name: 'seqnum',
+                type: 'string'
+            },
+            {
+                mapping: 'year',
+                name: 'year',
+                type: 'string'
             }
         ]
     });
@@ -96,6 +114,16 @@ Ext.onReady(function() {
             ,
             {   text: 'nodeid',
                 dataIndex: 'nodeid',
+                flex: 1
+            }
+            ,
+            {   text: 'type',
+                dataIndex: 'type',
+                flex: 1
+            }
+            ,
+            {   text: 'selected',
+                dataIndex: 'selected',
                 flex: 1
             }
         ],

@@ -7,7 +7,7 @@
         "version": "0.2",
         "year": "2011",
         "versionid": "143DE533-2D2D-872D-F796-6780F643992E",
-//        "expanded":true,
+        "expanded":true,
         "node": {
             "label": "New%20Algorithm",
             "srcnodeid": "4840DA13-81EE-A536-21F8-9437DA6D4535",
@@ -18,7 +18,7 @@
             "versionid": "gls@2E27AB63-5E21-7BED-FFBF-2A040DDF2F2B",
             "selected": "false",
             "version": "2011.0.02",
-//            "expanded":true,
+            "expanded":true,
             "node": {
                 "label": "001%20link",
                 "type": "PHASE",
