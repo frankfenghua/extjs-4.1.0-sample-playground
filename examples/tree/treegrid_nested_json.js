@@ -137,6 +137,9 @@ Ext.onReady(function() {
                 if(!node.isRoot()){
                     if(node.raw.node){
                         node.appendChild(newNodes[i], undefined, true);
+                        if( !newNodes[i].raw.node ){
+                            newNodes[i].set('leaf',true);
+                        }
                     }else{
                         node.set('leaf',true);
                     }
