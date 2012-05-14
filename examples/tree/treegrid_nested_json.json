@@ -1,27 +1,32 @@
 {
-    "success": true,
-    "data": [
-        {
-            "id": 1,
-            "name": "Phil",
-            "leaf": true
-        },
-        {
-            "id": 2,
-            "name": "Nico",
-            "expanded": true,
-            "data": [
-                {
-                    "id": 3,
-                    "name": "Mitchell",
-                    "leaf": true
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "name": "Sue",
-            "loaded": true
+    "node": {
+        "label": "QA%20001",
+        "type": "GUIDELINE",
+        "nodeid": "6D1BD13E-AB49-BCCA-BB2C-185949D4E3D4",
+        "selected": "true",
+        "version": "0.2",
+        "year": "2011",
+        "versionid": "143DE533-2D2D-872D-F796-6780F643992E",
+//        "expanded":true,
+        "node": {
+            "label": "New%20Algorithm",
+            "srcnodeid": "4840DA13-81EE-A536-21F8-9437DA6D4535",
+            "type": "GUIDELINE_SECTION",
+            "subtype": "PATHWAY_SECTION",
+            "srcversid": "97053378-8ED6-B62B-8111-F84528A21A08",
+            "nodeid": "gls@220B819A-CE09-3AF9-C2C3-DE90595542B1",
+            "versionid": "gls@2E27AB63-5E21-7BED-FFBF-2A040DDF2F2B",
+            "selected": "false",
+            "version": "2011.0.02",
+//            "expanded":true,
+            "node": {
+                "label": "001%20link",
+                "type": "PHASE",
+                "nodeid": "FDD55E9E-6FB7-B62A-AF2D-2A416881BF46",
+                "versionid": "EF7438CB-7FB3-B6D3-8BF2-07711C4FDBFC",
+                "selected": "false",
+                "leaf":true
+            }
         }
-    ]
+    }
 }

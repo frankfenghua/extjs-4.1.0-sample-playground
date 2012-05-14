@@ -27,20 +27,47 @@ Ext.onReady(function() {
         ]
     });
 
+    Ext.define('GusModel', {
+        extend: 'Ext.data.Model',
+        fields: [
+            {
+                convert: function(v, rec) {
+                    return  unescape(v);
+                },
+                mapping: 'label',
+                name: 'label',
+                type: 'string'
+            },
+            {
+                mapping: 'type',
+                name: 'type',
+                type: 'string'
+            },
+            {
+                name:"nodeid",
+                mapping:'nodeid',
+                type:'string'
+            }
+        ]
+    });
+
     var store = Ext.create('Ext.data.TreeStore', {
         id: 'store',
-        model: 'UsgsList',
+//        model: 'UsgsList',
+        model: 'GusModel',
         proxy: {
             type: 'ajax',
             url: 'treegrid_nested_json.json',
             reader: {
                 type:'json',
-                root:'data'
+                root:'node'
             }
         }
         ,
         root: {
             name: 'People',
+            label: 'People',
+            nodeid: 'root_nodeid',
             expanded: true
         }
 
@@ -63,11 +90,12 @@ Ext.onReady(function() {
         columns: [
             {   xtype: 'treecolumn',
                 text:'name',
-                dataIndex: 'name',
+                dataIndex: 'label',
                 flex: 1
-            },
-            {   text: 'id',
-                dataIndex: 'id',
+            }
+            ,
+            {   text: 'nodeid',
+                dataIndex: 'nodeid',
                 flex: 1
             }
         ],
