@@ -181,18 +181,29 @@ Ext.onReady(function() {
      }
      */
 
+    var url = 'http://localhost/js/myExtJSPrjGit/UITestBed/data/gus_qa001.xml' ;
+    var xml = new JKL.ParseXML( url, null );
+
+    gjsonData = xml.parse();
+//    var dumper = new JKL.Dumper();
+//    var text = dumper.dump( this.jsonData );
+//    console.log(text);
+
+
     /**
      * convert xml to json
      * http://localhost/extgit/test/xmltojson.html
      */
     var store = Ext.create('MyTreeStore', {
         id: 'store',
+        jsonData:{},
         model: 'GusModel',
         proxy: {
-            type: 'ajax',
+            type: 'memory',
+            data:gjsonData,
 //            url: 'treegrid_nested_json.json',
 //            url: 'treegrid_nested_json2.json',
-            url: 'treegrid_nested_json3.json',
+//            url: 'treegrid_nested_json3.json',
             reader: {
                 type:'myreader',
                 root: function(o) {
@@ -211,6 +222,13 @@ Ext.onReady(function() {
             label: 'People',
             nodeid: 'root_nodeid',
             expanded: true
+        } ,
+        listeners:{
+            beforeload: function() {
+            },
+            load:function( thisStore, node, records, successful,eOpts){
+
+            }
         }
 
     });
@@ -229,6 +247,7 @@ Ext.onReady(function() {
         title: 'nested_json_tree',
         store: store,
         rootVisible	: true,
+        jsonData:{},
 //        rootVisible	: false,
         // grid columns
         columns: [
@@ -279,6 +298,17 @@ Ext.onReady(function() {
 //                } else {
 //                    return false;
 //                }
+            },
+            load:function( thisStore, records, successful, eOpts){
+//                var url = 'http://localhost/js/myExtJSPrjGit/UITestBed/data/gus_qa001.xml' ;
+//                var xml = new JKL.ParseXML( url, null );
+//
+//                this.jsonData = xml.parse();
+//                var dumper = new JKL.Dumper();
+//                var text = dumper.dump( this.jsonData );
+//                console.log(text);
+//
+//                thisStore.load(thisStore.getRootNode()) ;
             }
         },
         renderTo: Ext.getBody()
