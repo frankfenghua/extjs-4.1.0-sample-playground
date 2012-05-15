@@ -231,7 +231,7 @@ Ext.onReady(function() {
     var grid = Ext.create('Ext.tree.Panel', {
         width: 700,
         height: 500,
-        title: 'nested_json_tree',
+        title: 'nested_xml_tree_not_work',
         store: store,
         rootVisible	: true,
 //        rootVisible	: false,
