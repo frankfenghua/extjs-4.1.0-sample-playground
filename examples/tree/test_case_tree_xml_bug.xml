@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<categories>
+    <category>
+        <id>1</id>
+        <name>News</name>
+        <categories>
+            <category>
+                <id>2</id>
+                <name>Local</name>
+            </category>
+            <category>
+                <id>6816</id>
+                <name>Latest Updates</name>
+            </category>
+            <category>
+                <id>8449</id>
+                <name>Crime &amp; Courts</name>
+            </category>
+            <category>
+                <id>11454</id>
+                <name>We Think Pink</name>
+            </category>
+            <category>
+                <id>8450</id>
+                <name>Government</name>
+            </category>
+            <category>
+                <id>107</id>
+                <name>City Ink</name>
+            </category>
+            <category>
+                <id>8448</id>
+                <name>Schools</name>
+            </category>
+            <category>
+                <id>8690</id>
+                <name>Health</name>
+            </category>
+            <category>
+                <id>8814</id>
+                <name>Bizarre</name>
+                <leaf>1</leaf>
+            </category>
+        </categories>
+    </category>
+    <category>
+        <id>9</id>
+        <name>Sports</name>
+        <categories>
+            <category>
+                <id>53</id>
+                <name>Preps</name>
+            </category>
+            <category>
+                <id>92</id>
+                <name>College</name>
+            </category>
+        </categories>
+    </category>
+</categories>
